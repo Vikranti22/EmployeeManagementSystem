@@ -1,21 +1,20 @@
 ﻿using EmployeeManagement.Data;
 using EmployeeManagement.Models;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace EmployeeManagement.Services
 {
+    // Service class to handle creation operations for Employee
     public class CreateService
     {
+        // Method to add a new employee to the database
         public void AddEmployee(Employee emp)
         {
             var validationResults = new List<ValidationResult>();
             var context = new ValidationContext(emp, null, null);
 
+            // Validate the employee object using data annotations
             if (!Validator.TryValidateObject(emp, context, validationResults, true))
             {
                 foreach (var error in validationResults)

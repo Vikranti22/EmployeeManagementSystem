@@ -2,11 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace EmployeeManagement.Services
 {
+   // Service class to handle read operations for Employee
     public class ReadService
     {
         public void ListEmployees()
@@ -14,6 +16,7 @@ namespace EmployeeManagement.Services
             using var db = new AppDbContext();
             var employees = db.Employees.ToList();
 
+            // Check if the list is empty
             if (!employees.Any())
             {
                 Console.WriteLine("No employees found.");

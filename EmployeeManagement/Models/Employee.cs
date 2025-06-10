@@ -9,6 +9,7 @@ namespace EmployeeManagement.Models
 {
     public class Employee
     {
+        //creating employee model
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Name is required.")]

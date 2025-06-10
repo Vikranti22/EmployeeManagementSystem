@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace EmployeeManagement.Services
 {
+    //service to handle delete operation
     public class DeleteService
     {
+        //method for delete employee
         public void DeleteEmployee(int id)
         {
             using var db = new AppDbContext();
